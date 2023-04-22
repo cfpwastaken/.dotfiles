@@ -9,3 +9,17 @@
 [user]
 	email = chaosflo44plus@gmail.com
 	name = Cfp
+[safe]
+	directory = /media/cfp/Volume/Projects/picoscratch-manager
+	directory = /media/cfp/Volume/Projects/picoscratch-learn
+	directory = /media/cfp/Volume/picoscratch
+	directory = /media/cfp/Volume/picoscratch-blocks
+	directory = /media/cfp/Volume/Projects/picoscratch-blocks
+	directory = /media/cfp/Volume/Projects/picoscratch
+	directory = /media/cfp/Volume/Projects/alex
+	directory = /media/cfp/Volume/Projects/*
+	directory = /media/cfp/Volume/Projects/alex-models
+	directory = /media/cfp/Volume/Projects/neoprint
+	directory = /media/cfp/Volume/Projects/mailverse
+	directory = /media/cfp/Volume/Projects/webannoy
+	directory = /media/cfp/Volume/Projects/nec_np-um301wg_remote

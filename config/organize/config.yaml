@@ -1,0 +1,87 @@
+# organize configuration file
+# https://organize.readthedocs.io
+
+downloads: &downloads
+  - ~/Downloads
+
+rules:
+  - name: "Make it meme to Memes Folder"
+    locations: *downloads
+    filters:
+      - extension: [jpg, jpeg, png, gif]
+      - name:
+          startswith: [makeitmeme, WhatsApp]
+    actions:
+      - move: /media/cfp/Volume/Memes/MakeItMeme/
+  - name: "Move isos to HDD"
+    locations: *downloads
+    filters:
+      - extension: [iso, img, uf2]
+    actions:
+      - move: /media/cfp/Volume/isos/
+  - name: "Delete deb packages"
+    locations: *downloads
+    filters:
+      - extension: [deb]
+    actions:
+      - delete
+  - name: "Teachable Machine samples to HDD"
+    locations: *downloads
+    filters:
+      - name:
+          contains: [-samples]
+    actions:
+      - move: /media/cfp/Volume/TeachableMachine/
+  - name: "Teachable Machine projects to HDD"
+    locations: *downloads
+    filters:
+      - extension: [tm]
+    actions:
+      - move: /media/cfp/Volume/TeachableMachine/
+  - name: "Move big downloads to HDD"
+    locations: *downloads
+    filters:
+      - size: "> 0.5 GB"
+    actions:
+      - move: /media/cfp/Volume/Downloads/
+  - name: "Delete duplicates"
+    locations: *downloads
+    filters:
+      - duplicate
+      - name
+    actions:
+      - trash
+  - name: "Delete empty files"
+    locations:
+      - *downloads
+      - "~"
+    filters:
+      - empty
+    actions:
+      - delete
+  - name: "Delete empty folders"
+    locations:
+      - *downloads
+      - "~"
+    targets: dirs
+    filters:
+      - "not name":
+          startswith: [Desktop, Documents, Downloads, Music, Pictures, Public, Templates, Videos]
+      - empty
+    actions:
+      - delete
+  - name: "Move PGP keys to HDD"
+    locations:
+      - path: "~"
+        max_depth: 2
+    filters:
+      - extension: [asc]
+    actions:
+      - move: /media/cfp/Volume/PGP/
+  - name: "Teachable Machine background samples to seperate folder"
+    locations: /media/cfp/Volume/TeachableMachine
+    filters:
+      - name:
+          startswith: [Background Noise-samples]
+    actions:
+      - move: /media/cfp/Volume/TeachableMachine/bg/
