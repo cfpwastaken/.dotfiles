@@ -2,3 +2,7 @@ Host falke
 	User root
 	HostName 192.168.2.182
 	Port 6969
+
+Host wetpi
+	User root
+	HostName 192.168.2.183
